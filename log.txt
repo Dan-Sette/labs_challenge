@@ -1,0 +1,10 @@
+METHOD |   URI   |        TIME        |        HOST         |
+-------------------------------------------------------------
+GET    |/test    |00:01:45 27/02/2022 |PostmanRuntime/7.29.0|
+POST   |/test    |00:01:49 27/02/2022 |PostmanRuntime/7.29.0|
+POST   |/user    |00:01:56 27/02/2022 |PostmanRuntime/7.29.0|
+POST   |/        |00:02:01 27/02/2022 |PostmanRuntime/7.29.0|
+GET    |/        |00:02:03 27/02/2022 |PostmanRuntime/7.29.0|
+GET    |/user    |00:02:10 27/02/2022 |localhost:8000       |
+GET    |/        |00:02:14 27/02/2022 |localhost:8000       |
+GET    |/        |15:14:37 27/02/2022 |localhost:8000       |
