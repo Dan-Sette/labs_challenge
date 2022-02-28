@@ -1,6 +1,6 @@
 # DESAFIO:
 
-![imagem 42 labs](img/image.png)
+![imagem 42 labs](API/img/image.png)
 
 > ⚠️ Status: Em desenvolvimento ⚠️
 
@@ -53,11 +53,11 @@ Rode o arquivo executável `labs_challenge` como abaixo:
 
 Você verá que o terminal ficará em um loop:
 
-![imagem do terminal](img/running.png)
+![imagem do terminal](API/img/running.png)
 
 Agora é só colar o link da porta ```http://localhost:8000 ``` no seu navegador, ou em um aplicativo como [Insomnia](https://insomnia.rest/download) ou [Postman](https://www.postman.com/downloads/)
 
-![imagem do navegador](img/localhost.png)
+![imagem do navegador](API/img/localhost.png)
 
 > Você pode testar com alguma URN diferente, como `/user` por exemplo;
 
@@ -83,7 +83,7 @@ Rode o arquivo executável `cli` como abaixo:
 ```
 O programa fará a leitura dos logs printando-os no terminal:
 
-![imagem do terminal com os logs](img/logs.png)
+![imagem do terminal com os logs](API/img/logs.png)
 
 Espero que tenha gostado. A parte bônus do projeto será implementada em um momento oportuno...🤓
 
