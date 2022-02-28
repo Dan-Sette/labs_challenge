@@ -1,6 +1,6 @@
 SRC_FILES	=	main.c mongoose.c ft_substr.c ft_split.c ft_calloc.c \
 				ft_strlcpy.c log.c do_free.c ft_strjoin.c ft_itoa.c \
-				ft_strdup.c log_utils.c
+				ft_strdup.c log_utils.c curl.c
 
 SRC_DIR		=	./src
 OBJECT_DIR	=	./obj

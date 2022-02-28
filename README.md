@@ -34,9 +34,11 @@ git clone https://github.com/Dan-Sette/labs_challenge
 
 ## 🗝️ Como testar o funcionamento e utilizar o código:
 
+#### API:
+
 Entre no diretório do projeto:
 ```
-cd labs_challenge
+cd labs_challenge/API
 ```
 
 Execute o comando `make`:
@@ -57,9 +59,31 @@ Agora é só colar o link da porta ```http://localhost:8000 ``` no seu navegador
 
 ![imagem do navegador](img/localhost.png)
 
-##### Você pode testar com alguma URN diferente, como `/user` ou `/test`
+> Você pode testar com alguma URN diferente, como `/user` por exemplo;
 
-> Se você estiver mandar uma requisição do tipo "POST" na URN `/test`, terá um resultado diferente em se tratando do método "GET";
+> Se você mandar uma requisição do tipo "POST" na URN `/`, terá um resultado diferente em se tratando do método "GET";
+
+> Se você acrescentar a URN `/rm` no path, poderá checar o resultado da requisição feita para a [API Rick and Morty](https://rickandmortyapi.com/);
+
+#### CLI:
+
+Entre no diretório do projeto:
+```
+cd labs_challenge/CLI
+```
+
+Execute o comando `make`:
+```
+make
+```
+
+Rode o arquivo executável `cli` como abaixo:
+```
+./cli
+```
+O programa fará a leitura dos logs printando-os no terminal:
+
+![imagem do terminal com os logs](img/logs.png)
 
 Espero que tenha gostado. A parte bônus do projeto será implementada em um momento oportuno...🤓
 

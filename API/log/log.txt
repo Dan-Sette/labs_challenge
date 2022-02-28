@@ -1,0 +1,12 @@
+METHOD |   URN   |        HOST         |        TIME        |
+-------------------------------------------------------------
+GET    |/        |localhost:8000       |21:15:43 27/02/2022 |
+GET    |/user    |localhost:8000       |21:15:54 27/02/2022 |
+GET    |/rm      |localhost:8000       |21:16:02 27/02/2022 |
+GET    |/rm      |PostmanRuntime/7.29.0|21:16:12 27/02/2022 |
+GET    |/user    |PostmanRuntime/7.29.0|21:16:16 27/02/2022 |
+POST   |/        |PostmanRuntime/7.29.0|21:16:22 27/02/2022 |
+GET    |/        |PostmanRuntime/7.29.0|21:16:30 27/02/2022 |
+GET    |/        |PostmanRuntime/7.29.0|21:44:14 27/02/2022 |
+GET    |/        |PostmanRuntime/7.29.0|21:44:15 27/02/2022 |
+GET    |/rm      |PostmanRuntime/7.29.0|21:44:20 27/02/2022 |

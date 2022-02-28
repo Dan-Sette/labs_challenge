@@ -6,7 +6,7 @@
 /*   By: dalves-s <dalves-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 11:55:36 by dalves-s          #+#    #+#             */
-/*   Updated: 2022/02/27 01:00:37 by dalves-s         ###   ########.fr       */
+/*   Updated: 2022/02/27 16:27:44 by dalves-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,35 +55,4 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 
-void	get_log_info(t_memory *inf)
-{
-	int		fd;
-	int		fd_test;
-	int		ret;
-	char	*buf;
-	int		i;
 
-	fd_test = open("teste", O_WRONLY | O_CREAT | O_APPEND, 0777);
-	ret = 62;
-	i = 0;
-	buf = ft_calloc(sizeof(char), 63);
-	inf->mat_log = (char **)ft_calloc(sizeof(t_memory), 30);
-	fd = open("log.txt", O_RDWR, 0777);
-	while (ret == 62)
-	{
-		ret  = read(fd, buf, 62);
-		if (ret != 62)
-		{
-			inf->mat_log[i] = NULL;
-			break;
-		}
-		inf->mat_log[i] = ft_strdup(buf);
-		if (i == 8)
-			ft_putstr_fd(inf->mat_log[i], fd_test);
-		i++;
-	}
-	close(fd);
-	close(fd_test);
-	free(buf);
-	free_double(inf->mat_log);
-}

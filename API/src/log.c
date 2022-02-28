@@ -6,7 +6,7 @@
 /*   By: dalves-s <dalves-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:57:03 by dalves-s          #+#    #+#             */
-/*   Updated: 2022/02/27 00:00:38 by dalves-s         ###   ########.fr       */
+/*   Updated: 2022/02/27 21:15:27 by dalves-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,27 @@ void	get_log(char **info)
 
 	char	*method;
 	char	**host;
-	char	**uri;
+	char	**urn;
 	int		fd;
 	char	*line_aux;
 	char	*time_log;
 
 	time_log = time_date();
-	fd = open("log.txt", O_RDWR | O_APPEND, 0777);
+	fd = open("log/log.txt", O_RDWR | O_APPEND, 0777);
 	method = info[0];
 	host = ft_split(info[3], '\r');
-	uri = ft_split(info[1], '\n');
-	line_aux = creat_log_line(method, host, uri, time_log);
+	urn = ft_split(info[1], '\n');
+	line_aux = creat_log_line(method, host, urn, time_log);
 	ft_putstr_fd(line_aux, fd);
 	ft_putchar_fd('\n', fd);
 	close(fd);
 	free_double(host);
-	free_double(uri);
+	free_double(urn);
 	free(method);
 	free(line_aux);
 }
 
-char	*creat_log_line(char *method, char **host, char **uri, char *time_log)
+char	*creat_log_line(char *method, char **host, char **urn, char *time_log)
 {
 	int		len;
 	char	*ret_line;
@@ -54,17 +54,15 @@ char	*creat_log_line(char *method, char **host, char **uri, char *time_log)
 			method = ft_strjoin(method, "|");
 	}
 	ret_line = ft_strjoin(ret_line, method);
-	len = ft_strlen(uri[0]);
+	len = ft_strlen(urn[0]);
 	while (len < 9)
 	{
-		uri[0] = ft_strjoin(uri[0], " ");
+		urn[0] = ft_strjoin(urn[0], " ");
 		len++;
 		if (len == 9)
-			uri[0] = ft_strjoin(uri[0], "|");
+			urn[0] = ft_strjoin(urn[0], "|");
 	}
-	ret_line = ft_strjoin(ret_line, uri[0]);
-	time_log = ft_strjoin(time_log, "|");
-	ret_line = ft_strjoin(ret_line, time_log);
+	ret_line = ft_strjoin(ret_line, urn[0]);
 	len = ft_strlen(host[0]);
 	while (len <= 21)
 	{
@@ -80,6 +78,8 @@ char	*creat_log_line(char *method, char **host, char **uri, char *time_log)
 		}
 	}
 	ret_line = ft_strjoin(ret_line, host[0]);
+	time_log = ft_strjoin(time_log, "|");
+	ret_line = ft_strjoin(ret_line, time_log);
 
 	return (ret_line);
 }
@@ -88,7 +88,7 @@ void	create_log_file(void)
 {
 	int		fd;
 	char	**matrix = NULL;
-	char	*line_0 = "METHOD |   URI   |        TIME        |        HOST         |\n";
+	char	*line_0 = "METHOD |   URN   |        HOST         |        TIME        |\n";
 	char	*line_1 = "-------------------------------------------------------------";
 	
 	fd = ft_strlen(line_0);
@@ -96,7 +96,7 @@ void	create_log_file(void)
 	matrix[0] = ft_substr(line_0, 0, ft_strlen(line_0));
 	matrix[1] = ft_substr(line_1, 0, ft_strlen(line_1));
 	
-	fd = open("log.txt", O_WRONLY | O_CREAT | O_APPEND, 0777);
+	fd = open("log/log.txt", O_WRONLY | O_CREAT | O_APPEND, 0777);
 	ft_putstr_fd(matrix[0], fd);
 	ft_putstr_fd(matrix[1], fd);
 	ft_putchar_fd('\n', fd);

@@ -6,7 +6,7 @@
 /*   By: dalves-s <dalves-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:48:43 by dalves-s          #+#    #+#             */
-/*   Updated: 2022/02/26 19:38:11 by dalves-s         ###   ########.fr       */
+/*   Updated: 2022/02/27 19:07:17 by dalves-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@ struct MemoryStruct {
 	char *memory;
 	size_t size;
 };
-
-typedef struct memory_log {
-	char	**mat_log;
-	int		flag;
-} t_memory;
 
 int			main(void);
 char		**ft_split(char const *s, char c);
@@ -50,5 +45,6 @@ char		*time_date(void);
 void		time_date_aux(char **now1, char *now2, int aux, int c);
 char		*creat_log_line(char *method, char **host, char **uri, char *time_log);
 void		ft_putnbr_fd(int n, int fd);
-void		get_log_info(t_memory *inf);
+char		*handle_curl(void);
+
 #endif
